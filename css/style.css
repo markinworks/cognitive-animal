@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ─────────────────────────────
+   DESIGN TOKENS
+───────────────────────────── */
+:root {
+  --paper:       #F8F4EA;
+  --paper-deep:  #EFE7D6;
+  --paper-card:  #FBF8F1;
+  --ink:         #29261F;
+  --ink-soft:    #58524A;
+  --ink-faint:   #9C9284;
+  --accent:      #7A3B2E;   /* faded vermillion (seal ink) */
+  --accent-2:    #4B5A45;   /* faded verdigris (secondary axis) */
+  --rule:        rgba(33, 31, 28, 0.14);
+  --rule-strong: rgba(33, 31, 28, 0.28);
+
+  --font-mincho: 'Shippori Mincho', serif;
+  --font-garamond: 'EB Garamond', serif;
+  --font-gothic: 'Zen Kaku Gothic New', sans-serif;
+  --font-sans: 'DM Sans', sans-serif;
+
+  --measure: 640px;
+}
+
+* , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper-deep);
+  color: var(--ink);
+  font-family: var(--font-gothic), var(--font-sans);
+  font-weight: 400;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sheet {
+  max-width: var(--measure);
+  margin: 32px auto;
+  background: var(--paper-card);
+}
+
+a { color: inherit; }
+
+img, svg { display: block; max-width: 100%; }
+
+/* ─────────────────────────────
+   LAYOUT
+───────────────────────────── */
+.page {
+  padding: 64px 24px 48px;
+}
+
+.page-break {
+  height: 14px;
+  background: var(--paper-deep);
+  margin: 56px -24px 48px;
+}
+
+.site-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 28px 24px 0;
+}
+
+.site-header .brand {
+  font-family: var(--font-mincho);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.lang-toggle {
+  display: inline-flex;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.lang-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  color: var(--ink-faint);
+  padding: 2px 4px;
+}
+
+.lang-toggle button[aria-current="true"] {
+  color: var(--ink);
+  border-bottom: 1px solid var(--accent);
+}
+
+/* ─────────────────────────────
+   HAIRLINE RULE / SECTION HEADING
+───────────────────────────── */
+.rule {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 56px 0 40px;
+}
+
+.section-heading {
+  font-family: var(--font-mincho);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+/* ─────────────────────────────
+   RESULT HEADER
+───────────────────────────── */
+.result-header {
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.result-eyebrow {
+  font-family: var(--font-garamond);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  margin-bottom: 8px;
+}
+
+.result-axis {
+  font-family: var(--font-gothic);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+}
+
+.result-name-jp {
+  font-family: var(--font-mincho);
+  font-size: clamp(1.9rem, 5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.result-catchphrase-en {
+  font-family: var(--font-garamond);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  margin-bottom: 14px;
+}
+
+.result-catchphrase {
+  font-family: var(--font-mincho);
+  font-size: 1.1rem;
+  color: var(--accent);
+  line-height: 1.8;
+}
+
+/* illustration placeholder — 廃止（結果ページではイラスト枠を使わない方針） */
+
+/* ─────────────────────────────
+   NARRATIVE / BODY TEXT
+───────────────────────────── */
+.narrative { text-align: center; }
+
+.narrative p { text-align: center; }
+
+.narrative .lede {
+  font-family: var(--font-mincho);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  line-height: 2;
+  color: var(--ink-soft);
+  margin-bottom: 32px;
+}
+
+.narrative-label {
+  font-family: var(--font-mincho);
+  font-size: 0.88rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.narrative p, .prose p, .trait-description, .strategy-item p {
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+  white-space: pre-line;
+}
+
+.narrative p:last-child, .prose p:last-child { margin-bottom: 0; }
+
+/* ─────────────────────────────
+   VAK / EAWP CARDS
+───────────────────────────── */
+.trait-block {
+  margin-bottom: 32px;
+}
+
+.trait-label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 14px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.trait-block.eawp .trait-label { color: var(--accent-2); }
+
+.trait-bullets {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.trait-bullets li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+
+.trait-bullets li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+  color: var(--ink-faint);
+}
+
+.trait-description {
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+}
+
+/* ─────────────────────────────
+   PITFALL
+───────────────────────────── */
+.pitfall-bullets {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.pitfall-bullets li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+
+.pitfall-bullets li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+  color: var(--ink-faint);
+}
+
+/* ─────────────────────────────
+   STRATEGY
+───────────────────────────── */
+.strategy-item { margin-bottom: 36px; }
+.strategy-item:last-child { margin-bottom: 0; }
+
+.strategy-title {
+  font-family: var(--font-mincho);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* ─────────────────────────────
+   CROSS-NAV — other animals
+───────────────────────────── */
+.animal-index {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 8px;
+}
+
+@media (max-width: 480px) {
+  .animal-index { grid-template-columns: repeat(2, 1fr); }
+}
+
+.animal-index a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--font-mincho);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding: 14px 4px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  transition: border-color .2s ease, color .2s ease;
+}
+
+.animal-index a:hover,
+.animal-index a[aria-current="true"] {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+/* ─────────────────────────────
+   FOOTER
+───────────────────────────── */
+.site-footer {
+  padding: 40px 24px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  border-top: 1px solid var(--rule);
+}
+
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+
+.site-footer a:hover { color: var(--accent); }
+
+/* ─────────────────────────────
+   HOME PAGE
+───────────────────────────── */
+.home-hero {
+  text-align: center;
+  padding: 72px 24px 0;
+}
+
+.home-title {
+  font-family: var(--font-mincho);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+
+.home-concept {
+  font-family: var(--font-mincho);
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin-bottom: 28px;
+}
+
+.home-description {
+  font-family: var(--font-gothic);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 2;
+  margin-bottom: 36px;
+}
+
+.home-cta {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--font-mincho);
+  font-size: 0.95rem;
+  color: var(--ink);
+  padding: 18px 4px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 4px;
+  margin-bottom: 56px;
+  transition: border-color .2s ease;
+}
+
+.home-cta:hover { border-color: var(--accent); }
+
+.site-footer svg {
+  width: 17px;
+  height: 17px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.4;
+}
+
+.site-footer svg[viewBox="0 0 493 493"] {
+  width: 15px;
+  height: 15px;
+  stroke: none;
+}
+
+/* ─────────────────────────────
+   QUIZ SCREEN
+───────────────────────────── */
+.quiz-progress {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 40px 0 56px;
+}
+
+.quiz-progress-track {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+  position: relative;
+}
+
+.quiz-progress-fill {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  background: var(--accent);
+  transition: width .25s ease;
+}
+
+.quiz-progress-count {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+.quiz-eyebrow {
+  font-family: var(--font-garamond);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  margin-bottom: 14px;
+}
+
+.quiz-question {
+  font-family: var(--font-mincho);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.95;
+  color: var(--ink);
+  margin-bottom: 44px;
+}
+
+.quiz-options {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  cursor: pointer;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-gothic), var(--font-sans);
+  transition: border-color .2s ease;
+}
+
+.quiz-option:hover {
+  border-color: var(--rule-strong);
+}
+
+.quiz-option-radio {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink-faint);
+  position: relative;
+  transition: border-color .2s ease;
+}
+
+.quiz-option-radio::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+
+.quiz-option-text {
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+.quiz-option.is-selected {
+  border-color: var(--accent);
+}
+
+.quiz-option.is-selected .quiz-option-radio {
+  border-color: var(--accent);
+}
+
+.quiz-option.is-selected .quiz-option-radio::after {
+  opacity: 1;
+}
+
+.quiz-option.is-selected .quiz-option-text {
+  color: var(--ink);
+}
+
+.quiz-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quiz-nav-btn {
+  font-family: var(--font-mincho);
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  background: none;
+  border: 1px solid var(--rule-strong);
+  border-radius: 4px;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: border-color .2s ease, color .2s ease;
+}
+
+.quiz-nav-btn:hover {
+  border-color: var(--accent);
+}
+
+.quiz-nav-btn.is-disabled {
+  color: var(--ink-faint);
+  border-color: var(--rule);
+  cursor: not-allowed;
+}
+
+.quiz-nav-btn.is-disabled:hover {
+  border-color: var(--rule);
+}
+
+.quiz-next {
+  color: var(--ink-faint);
+  border-color: var(--rule);
+  cursor: not-allowed;
+}
+
+.quiz-next:hover {
+  border-color: var(--rule);
+}
+
+.quiz-next.is-active {
+  color: var(--ink);
+  border-color: var(--rule-strong);
+  cursor: pointer;
+}
+
+.quiz-next.is-active:hover {
+  border-color: var(--accent);
+}
