@@ -38,7 +38,8 @@ const ANIMALS = {
     jp: {
       animal_name: "タコ",
       catchphrase: `世界は、"光景"として残っていく。`,
-      lede: "私たちは同じ世界を見ていても、受け取っている形式が少しずつ違う。",
+      lede: `私たちは同じ世界を見ていても、
+      受け取っている形式が少しずつ違う。`,
       narrative_opening: `タコ型の脳は、
 世界を"光景"として受け取っている。
 
@@ -191,7 +192,7 @@ const ANIMALS = {
   koumori: {
     jp: {
       animal_name: "コウモリ",
-      catchphrase: `世界は、"響き"として残っていく。`,
+      catchphrase: `世界は、"音"として読み解かれる。`,
       lede: "私たちは同じ世界を見ていても、受け取っている形式が少しずつ違う。",
       narrative_opening: `コウモリ型の脳は、
  世界を"音"として受け取っている。
@@ -420,7 +421,7 @@ const ANIMALS = {
   ookami: {
     jp: {
       animal_name: "オオカミ",
-      catchphrase: `世界は、"音"として読み解かれる。`,
+      catchphrase: `世界は、"和音"として広がっていく。`,
       lede: "私たちは同じ世界を見ていても、受け取っている形式が少しずつ違う。",
       narrative_opening: `オオカミ型の脳は、
  世界を"和音"として受け取っている。
@@ -641,7 +642,7 @@ const ANIMALS = {
   inko: {
     jp: {
       animal_name: "インコ",
-      catchphrase: `世界は、"和音"として広がっていく。`,
+      catchphrase: `世界は、"リズム"として整う。`,
       lede: "私たちは同じ世界を見ていても、受け取っている形式が少しずつ違う。",
       narrative_opening: `インコ型の脳は、
 世界を“リズム”として受け取っている。

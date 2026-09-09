@@ -75,6 +75,10 @@ img, svg { display: block; max-width: 100%; }
   color: var(--ink);
 }
 
+.lang-toggle[hidden] {
+  display: none;
+}
+
 .lang-toggle {
   display: inline-flex;
   gap: 6px;
