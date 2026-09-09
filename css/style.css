@@ -188,7 +188,7 @@ img, svg { display: block; max-width: 100%; }
   margin-bottom: 32px;
 }
 
-.narrative-label {
+.narrative p.narrative-label {
   font-family: var(--font-mincho);
   font-size: 1.1rem;
   letter-spacing: 0.12em;
