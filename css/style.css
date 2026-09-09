@@ -11,6 +11,7 @@
   --ink-soft:    #58524A;
   --ink-faint:   #9C9284;
   --accent:      #7A3B2E;   /* faded vermillion (seal ink) */
+  --accent-strong: #762819; /* 生存戦略ラベル用の強めの朱色 */
   --accent-2:    #4B5A45;   /* faded verdigris (secondary axis) */
   --rule:        rgba(33, 31, 28, 0.14);
   --rule-strong: rgba(33, 31, 28, 0.28);
@@ -190,7 +191,7 @@ img, svg { display: block; max-width: 100%; }
   font-family: var(--font-mincho);
   font-size: 0.98rem;
   letter-spacing: 0.12em;
-  color: var(--accent);
+  color: var(--accent-strong);
   margin-bottom: 14px;
 }
 
