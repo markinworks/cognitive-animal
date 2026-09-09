@@ -133,7 +133,7 @@ img, svg { display: block; max-width: 100%; }
   font-family: var(--font-garamond);
   font-style: italic;
   font-size: 0.85rem;
-  color: var(--ink-faint);
+  color: var(--ink-soft);
   margin-bottom: 8px;
 }
 
@@ -157,7 +157,7 @@ img, svg { display: block; max-width: 100%; }
   font-family: var(--font-garamond);
   font-style: italic;
   font-size: 0.85rem;
-  color: var(--ink-faint);
+  color: var(--ink-soft);
   margin-bottom: 14px;
 }
 
@@ -426,7 +426,7 @@ img, svg { display: block; max-width: 100%; }
   font-family: var(--font-sans);
   font-size: 0.72rem;
   letter-spacing: 0.06em;
-  color: var(--ink-faint);
+  color: var(--ink-soft);
   white-space: nowrap;
 }
 
@@ -434,7 +434,7 @@ img, svg { display: block; max-width: 100%; }
   font-family: var(--font-garamond);
   font-style: italic;
   font-size: 0.85rem;
-  color: var(--ink-faint);
+  color: var(--ink-soft);
   margin-bottom: 14px;
 }
 
