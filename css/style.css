@@ -4,6 +4,7 @@
    DESIGN TOKENS
 ───────────────────────────── */
 :root {
+  color-scheme: light;
   --paper:       #F8F4EA;
   --paper-deep:  #EFE7D6;
   --paper-card:  #FBF8F1;
