@@ -192,7 +192,6 @@ img, svg { display: block; max-width: 100%; }
   font-size: 1.1rem;
   letter-spacing: 0.12em;
   color: var(--accent);
-  margin-bottom: 14px;
 }
 
 .narrative p, .prose, .trait-description, .strategy-item p {
