@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://markofinkworks.github.io/cognitive-animal/sitemap.xml
