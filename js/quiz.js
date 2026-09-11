@@ -41,16 +41,21 @@ function render() {
   document.getElementById("question-text").textContent = q.text;
 
   const list = document.getElementById("options-list");
+  list.setAttribute("role", "radiogroup");
+  list.setAttribute("aria-labelledby", "question-text");
   list.innerHTML = "";
+
   q.options.forEach(function (opt) {
     const li = document.createElement("li");
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "quiz-option";
     btn.dataset.optionId = opt.id;
+    btn.setAttribute("role", "radio");
 
     const radio = document.createElement("span");
     radio.className = "quiz-option-radio";
+    radio.setAttribute("aria-hidden", "true");
 
     const text = document.createElement("span");
     text.className = "quiz-option-text";
@@ -60,9 +65,11 @@ function render() {
     btn.appendChild(text);
 
     const currentAnswer = answers[currentIndex];
-    if (currentAnswer && currentAnswer.optionId === opt.id) {
+    const isSelected = currentAnswer && currentAnswer.optionId === opt.id;
+    if (isSelected) {
       btn.classList.add("is-selected");
     }
+    btn.setAttribute("aria-checked", isSelected ? "true" : "false");
 
     btn.addEventListener("click", function () {
       selectOption(opt);
